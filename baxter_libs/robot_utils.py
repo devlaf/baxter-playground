@@ -14,7 +14,6 @@ def shutdown():
     shutdown_robot()
 
 def ensure_robot_enabled():
-    
     rs = baxter_interface.RobotEnable(CHECK_VERSION)
 
     if not rs.state().enabled:
@@ -24,10 +23,9 @@ def ensure_robot_enabled():
 
 def shutdown_robot():
     rospy.loginfo("shutdown_robot -- Disabling robot")
-
-    # maybe we should call the tuck script here?
     
+    # maybe worth calling the tuck script here?
+
     rs = baxter_interface.RobotEnable(CHECK_VERSION)
     if rs.state().enabled:
         rs.disable()
-

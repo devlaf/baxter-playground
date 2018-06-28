@@ -31,7 +31,9 @@ also calibration stuff, etc.
 ```
 
 ### Todo
-- Create an async rosnode publisher, in particular for arm joints
-- Figure out the head sonars and add them to the head-related objects
+- Update arm class for completion callbacks
+- Figure out the head sonars and add them to the head-related stuff
 - Work out the knobs/buttons on the arms
-- Create interf. methods for gripper cameras 
+- create wrappers for gripper camera stuff
+- expand on cartesian navigation
+- update syntax against some common python style convention

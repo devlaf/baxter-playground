@@ -4,8 +4,8 @@ import argparse
 import time
 import pickle
 import rospy
-import robot_utils
-from baxter import Baxter
+import baxter_libs.robot_utils
+from baxter_libs.baxter import Baxter
 
 _baxter = 0
 _waypoints = []
@@ -60,6 +60,7 @@ def main():
     _baxter = Baxter()
 
     if args.operation == "playback":
+        time.sleep(7)
         playback_waypoints(args.filepath)
     else:
         record_waypoints(args.filepath)

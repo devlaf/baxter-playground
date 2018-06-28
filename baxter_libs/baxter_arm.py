@@ -7,6 +7,8 @@ import robot_utils
 from baxter_interface import CHECK_VERSION
 from robot_utils import Side
 from baxter_gripper import BaxterGripper
+#from async_node_publisher import AsyncNodePublisher
+from ros_tools.async_node_publisher import AsyncNodePublisher
 
 class BaxterArm(object):
 
@@ -18,9 +20,11 @@ class BaxterArm(object):
         else:
             self._arm = baxter_interface.Limb(Side.RIGHT)
 
-        self.Gripper = BaxterGripper(side)
-        
         self._joint_names = self._arm.joint_names()
+        self._publisher = AsyncNodePublisher()
+        self._node_id = "baxter_arm" + side
+        
+        self.Gripper = BaxterGripper(side)
 
     def get_joint_names(self):
         return self._joint_names
@@ -32,11 +36,9 @@ class BaxterArm(object):
         return dict(map(lambda x: (x, self.get_current_position(x)), self.get_joint_names()))
 
     def set_pose(self, pose):
-        control_rate = rospy.Rate(100)
-        while (not rospy.is_shutdown() and not self.are_all_joints_within_tolerance(pose, self.get_current_pose(), baxter_interface.JOINT_ANGLE_TOLERANCE)):
-            self._arm.set_joint_positions(pose, True)
-            control_rate.sleep()
-    
+        self._publisher.publish_async(self._node_id, 100, self._arm.set_joint_positions(pose, True),
+        self.are_all_joints_within_tolerance(pose, self.get_current_pose(), baxter_interface.JOINT_ANGLE_TOLERANCE))
+
     def are_all_joints_within_tolerance(self, joints_expected, joints_actual, tolerance):
         pairs = zip(joints_expected.values(), joints_actual.values())
         compliance = map(lambda x: self.is_within_tolerance(x[0], x[1], tolerance), pairs)

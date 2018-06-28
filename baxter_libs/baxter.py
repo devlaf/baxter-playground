@@ -1,8 +1,3 @@
-import os
-import sys
-import rospy
-import baxter_interface
-import robot_utils
 from robot_utils import Side
 from baxter_arm import BaxterArm
 from baxter_head import BaxterHead
