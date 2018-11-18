@@ -105,3 +105,4 @@ venv.bak/
 
 # Test utils
 functional_tests/waypoint_sets/
+functional_tests/img/
