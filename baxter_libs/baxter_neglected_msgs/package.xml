@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package>
+  <name>baxter_neglected_msgs</name>
+  <version>0.1.0</version>
+  <description>
+    Messages and Services that were not included in the Baxter SDK stuff
+  </description>
+
+  <maintainer email="devin@devlaf.io">
+    devlaf
+  </maintainer>
+  <license>beerware</license>
+  <url type="website">devlaf.io</url>
+  <author>devlaf</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>message_generation</build_depend>
+  <build_depend>std_msgs</build_depend>
+
+  <run_depend>message_runtime</run_depend>
+  <run_depend>std_msgs</run_depend>
+
+</package>

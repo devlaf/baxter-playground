@@ -5,6 +5,7 @@ import cv2
 import cv_bridge
 import baxter_interface
 import robot_utils
+from baxter_sonar_array import SonarArray
 
 from sensor_msgs.msg import (
     Image,
@@ -15,6 +16,7 @@ class BaxterHead(object):
     def __init__(self):
         robot_utils.ensure_robot_enabled()
         self._head = baxter_interface.Head()
+        self.SonarArray = SonarArray()
 
     """
     Send an image to baxters' face

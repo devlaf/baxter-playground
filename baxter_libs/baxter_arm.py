@@ -7,7 +7,6 @@ import robot_utils
 from baxter_interface import CHECK_VERSION
 from robot_utils import Side
 from baxter_gripper import BaxterGripper
-#from async_node_publisher import AsyncNodePublisher
 from ros_tools.async_node_publisher import AsyncNodePublisher
 
 class BaxterArm(object):

@@ -12,7 +12,7 @@ def test_head_utils():
     test_head_orientation(baxter)
 
 def test_head_image(baxter):
-    baxter.Head.set_face_image('functional_tests/img/nick_cage.jpg')
+    baxter.Head.set_face_image('functional_tests/img/sad_robot_4.jpg')
 
 def test_head_orientation(baxter):
     baxter.Head.set_head_orientation(1.5, 1.0)

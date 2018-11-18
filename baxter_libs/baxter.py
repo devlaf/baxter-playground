@@ -8,3 +8,4 @@ class Baxter(object):
         self.LeftArm = BaxterArm(Side.LEFT)
         self.RightArm = BaxterArm(Side.RIGHT)
         self.Head = BaxterHead()
+        #self.SonarArray = BaxterSonarArray()
