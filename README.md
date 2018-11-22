@@ -1,5 +1,7 @@
 # baxter-playground
-A layer of code to operate a rethink baxter.  Compiling some notes for myself/friends below for reference.
+Some code to operate a rethink baxter.  Compiling some notes for myself/friends below for reference.
+
+![baxter, starring nick cage](https://gist.githubusercontent.com/devlaf/a7e7ec6738907150b3c364d20200ea5c/raw/b65eaccdeac02f9ca365d990eab9ead5a5aeec7c/baxter.jpg)
 
 ### Login
 You can SSH directly into the baxter.  Find the ip/hostname via the [Field Service Menu](http://sdk.rethinkrobotics.com/wiki/Field_Service_Menu_(FSM))
